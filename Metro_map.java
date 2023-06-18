@@ -67,7 +67,7 @@ public class Metro_map {
         graph.get(18).add(19); // Ashok Park Main -> Satguru Ram Singh Marg
         graph.get(19).add(26); // Satguru Ram Singh Marg -> Kirti Nagar
 
-        // Print the list of stations for user to choose
+       
         System.out.println("List of Stations:");
         for (int i = 0; i < numStations; i++) {
             System.out.println(i + ": " + stationNames[i]);
@@ -77,18 +77,18 @@ public class Metro_map {
         boolean continueFlag = true;
 
         while (continueFlag) {
-            // Get source and destination from the user
+           
             System.out.print("\nEnter the source station number: ");
             int source = scanner.nextInt();
             System.out.print("Enter the destination station number: ");
             int destination = scanner.nextInt();
 
-            // Check if the source and destination are valid station numbers
+          s
             if (source >= 0 && source < numStations && destination >= 0 && destination < numStations) {
                 // Calculate the shortest path
                 calculateShortestPath(graph, source, destination);
 
-                // Ask the user if they want to continue
+                
                 System.out.print("\nDo you want to continue? Enter '1' for Yes, any other number for No: ");
                 int choice = scanner.nextInt();
                 continueFlag = (choice == 1);
@@ -138,7 +138,7 @@ public class Metro_map {
             }
         }
 
-        // Check if a path exists between the source and destination
+     
         if (distances[destination] == Integer.MAX_VALUE) {
             System.out.println("No path found between the source and destination.");
             return;
@@ -152,7 +152,7 @@ public class Metro_map {
             currentNode = previous[currentNode];
         }
 
-        // Print the shortest path
+
         System.out.println("\nShortest Path:");
         for (int i = 0; i < shortestPath.size(); i++) {
             int stationNumber = shortestPath.get(i);
@@ -160,10 +160,9 @@ public class Metro_map {
             System.out.println(stationNumber + ": " + stationName);
         }
 
-        // Calculate the total distance covered
         int distanceCovered = distances[destination];
 
-        // Print the total distance covered
+
         System.out.println("\nTotal Distance Covered: " + distanceCovered + " km");
     }
 }
